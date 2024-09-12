@@ -4,10 +4,11 @@ import { Form } from "react-router-dom";
 
 import './AuthForm.css';
 
-const AuthForm = ({title}) => {
+const AuthForm = ({title, error, errorMsg}) => {
   return (
     <Form method="post" className="todo__form-container">
         <h1>{title}</h1>
+        {error && <p>{errorMsg}</p>}
         <div className="todo__form-input-wrapper">
           <div className="todo__form-input-container">
             <input type="text" name="username" placeholder="Username" />

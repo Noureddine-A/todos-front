@@ -2,7 +2,7 @@ import "./App.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./components/root/Root";
-import SignUp from "./components/auth/SignUp";
+import SignUp, { action as signUpAction } from "./components/auth/SignUp";
 import Login from "./components/auth/Login";
 import { TodoContent } from "./components/content/TodoContent";
 
@@ -13,17 +13,24 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <TodoContent/>
+        element: <TodoContent />,
       },
       {
-        path: "signup",
-        element: <SignUp/>
+        path: "auth",
+        errorElement: <p>User already exists</p>,
+        children: [
+          {
+            path: "signup",
+            element: <SignUp />,
+            action: signUpAction,
+          },
+          {
+            path: "login",
+            element: <Login />,
+          },
+        ],
       },
-      {
-        path: "login",
-        element: <Login/>
-      }
-    ]
+    ],
   },
 ]);
 

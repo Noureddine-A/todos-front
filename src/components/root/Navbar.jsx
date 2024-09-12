@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="todo__navbar-container">
       <ul>
         <NavLink
-          to="signup"
+          to="auth/signup"
           className={({ isActive }) => [
             isActive
               ? "todo__navbar-list-item-active"
@@ -19,7 +19,7 @@ const Navbar = () => {
           Sign Up
         </NavLink>
         <NavLink
-          to="login"
+          to="auth/login"
           className={({ isActive }) => [
             isActive
               ? "todo__navbar-list-item-active"

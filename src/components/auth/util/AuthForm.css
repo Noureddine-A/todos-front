@@ -64,3 +64,10 @@
 .todo__form-button-container button:hover {
   background-color: orange;
 }
+
+.todo__form-container p {
+  color: red;
+  font-family: var(--regular);
+  margin-bottom: 1rem;
+  text-align: center;
+}
