@@ -1,0 +1,32 @@
+.todo__navbar-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 10vh;
+    background-color: var(--very-dark-blue);
+    padding-right: 5rem;
+}
+
+.todo__navbar-container ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+.todo__navbar-list-item {
+    font-family: var(--regular);
+    text-decoration: none;
+    color: var(--light-grayish-blue);
+    cursor: pointer;
+}
+
+.todo__navbar-list-item:hover {
+    color: var(--dark-grayish-blue);
+}
+
+.todo__navbar-list-item-active {
+    font-family: var(--regular);
+    color: var(--dark-grayish-blue);
+    text-decoration: underline;
+}
