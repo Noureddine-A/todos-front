@@ -8,13 +8,15 @@ const AuthForm = ({ title, error, errorMsg }) => {
   let usernameInput = "todo__form-input-container-user-input";
   let passwordInput = "todo__form-input-container-password-input";
 
-  if (errorMsg?.includes("password") && errorMsg?.includes("username")) {
-    usernameInput = "todo__form-input-container-input-username-error";
-    passwordInput = "todo__form-input-container-input-password-error";
-  } else if (errorMsg?.includes("username")) {
-    usernameInput = "todo__form-input-container-input-username-error";
-  } else if (errorMsg?.includes("password")) {
-    passwordInput = "todo__form-input-container-input-password-error";
+  if (error) {
+    if (errorMsg?.includes("username") && errorMsg?.includes("password")) {
+      usernameInput = "todo__form-input-container-input-username-error";
+      passwordInput = "todo__form-input-container-input-password-error";
+    } else if (errorMsg?.includes("username")) {
+      usernameInput = "todo__form-input-container-input-username-error";
+    } else if (errorMsg?.includes("password")) {
+      passwordInput = "todo__form-input-container-input-password-error";
+    }
   }
 
   return (

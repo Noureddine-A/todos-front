@@ -28,12 +28,6 @@ export async function action({ request, params }) {
   const username = data.get("username");
   const password = data.get("password");
 
-  const checkedInput = validateInput(username, password);
-
-  if (checkedInput.isError === true) {
-    return { isError: true, message: checkedInput.message };
-  }
-
   const response = await fetch("http://localhost:8080/auth/signup", {
     method: "POST",
     headers: {
@@ -56,33 +50,4 @@ export async function action({ request, params }) {
   }
 
   return redirect("/auth/login");
-}
-
-export function validateInput(username, password) {
-  let error = {};
-
-  if (password.trim().length < 5 && username.trim().length < 5) {
-    error = {
-      isError: true,
-      message:
-        "Both the password and username needs to be at least 6 characters long."
-    };
-  } else if (password.trim().length < 5) {
-    error = {
-      isError: true,
-      message:
-        "The password needs to be at least 6 characters to be deemed valid.",
-    }
-  } else if( username.trim().length < 5) {
-    error = {
-      isError: true,
-      message: "The username needs to be at least 6 characters to be deemed valid."
-    }
-  } else {
-    error = {
-      isError: false
-    }
-  }
-
-  return error;
 }
