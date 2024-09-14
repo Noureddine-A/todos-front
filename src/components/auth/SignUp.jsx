@@ -45,9 +45,5 @@ export async function action({ request, params }) {
     return { isError: true, message: resData.error };
   }
 
-  if (!response.ok) {
-    return { isError: true, message: "Didn't work" };
-  }
-
   return redirect("/auth/login");
 }

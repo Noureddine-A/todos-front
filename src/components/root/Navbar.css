@@ -30,3 +30,18 @@
     color: var(--dark-grayish-blue);
     text-decoration: underline;
 }
+
+.todo__logout-button {
+    background-color: var(--very-dark-blue);
+    color: white;
+    font-family: var(--regular);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.todo__logout-button:hover{
+    font-family: var(--regular);
+    color: var(--dark-grayish-blue);
+    text-decoration: underline;
+}
