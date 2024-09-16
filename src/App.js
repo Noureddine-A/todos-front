@@ -3,16 +3,18 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./components/root/Root";
 import SignUp, { action as signUpAction } from "./components/auth/SignUp";
-import Login, {action as loginAction} from "./components/auth/Login";
-import {action as logoutAction} from './components/auth/Logout';
+import Login, { action as loginAction } from "./components/auth/Login";
+import { action as logoutAction } from "./components/auth/Logout";
 import { TodoContent } from "./components/content/TodoContent";
 import { tokenLoader } from "./components/auth/util/auth";
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    id: 'root',
+    id: "root",
     loader: tokenLoader,
     children: [
       {
@@ -30,11 +32,11 @@ const router = createBrowserRouter([
           {
             path: "login",
             element: <Login />,
-            action: loginAction
+            action: loginAction,
           },
           {
             path: "logout",
-            action: logoutAction
+            action: logoutAction,
           },
         ],
       },
@@ -42,8 +44,14 @@ const router = createBrowserRouter([
   },
 ]);
 
+const queryClient = new QueryClient();
+
 function App() {
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router}></RouterProvider>
+    </QueryClientProvider>
+  );
 }
 
 export default App;

@@ -7,8 +7,6 @@ import "./Navbar.css";
 const Navbar = () => {
   const loaderData = useRouteLoaderData("root");
 
-  console.log(loaderData);
-
   return (
     <nav className="todo__navbar-container">
       <ul>

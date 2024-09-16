@@ -5,3 +5,7 @@ export function getAuthToken() {
 export function tokenLoader() {
     return getAuthToken();
 }
+
+export function getUserId() {
+    return localStorage.getItem("userId");
+}

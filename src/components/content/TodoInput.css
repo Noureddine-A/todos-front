@@ -1,0 +1,52 @@
+.todo__input-container {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    background-color: var(--very-dark-desaturated-blue);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.todo__input-complete-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+}
+
+.todo__input-complete-button-container button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--very-dark-desaturated-blue);
+    border: 1px solid var(--dark-grayish-blue)
+}
+
+.todo__input-complete-button-container button:hover {
+    background: url("../../assets/images/icon-check.svg"), var(--check-background);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.todo__input-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+}
+
+.todo__input-input-container input {
+    height: 70%;
+    width: 70%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    background-color: var(--very-dark-desaturated-blue);
+    font-family: var(--regular);
+    border: none;
+    font-size: 20px;
+    color: white;
+    outline: none;
+}

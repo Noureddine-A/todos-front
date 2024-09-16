@@ -40,7 +40,10 @@ export async function action({ request, params }) {
     return { isError: true, message: resData.error };
   }
 
+  console.log(resData);
+
   localStorage.setItem('token', resData.token);
+  localStorage.setItem("userId", resData.userId);
 
   return redirect("/");
 }
