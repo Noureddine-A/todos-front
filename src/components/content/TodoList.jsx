@@ -1,14 +1,14 @@
-import React from "react"
+import React from "react";
 
-import { useQuery} from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from "react";
 
 import "./TodoList.css";
 import TodoItem from "./TodoItem";
 import { retrieveAllTodos } from "../util/http";
 
-const TodoList = ({render}) => {
+const TodoList = ({ render, filter, setAmount }) => {
   const { data, refetch } = useQuery({
     queryKey: ["todos"],
     queryFn: retrieveAllTodos,
@@ -16,28 +16,51 @@ const TodoList = ({render}) => {
 
   const [reEvaluate, setReevaluate] = useState(false);
 
+  let filteredList = data;
+
+  if (filter !== "all") {
+    filteredList = data.filter((todo) => {
+      if (filter === "active") {
+        return todo.completed === false;
+      }
+
+      return todo.completed === true;
+    });
+  }
+
+  function countUncompletedTasks() {
+    if(data) {
+      let uncompletedTasks = data.filter(todo => {
+        return todo.completed === false;
+      })
+      return uncompletedTasks.length;
+    }
+  }
+
+  setAmount(countUncompletedTasks);
+
   function onItemUpdated() {
     reEvaluateTodoList();
   }
 
   useEffect(() => {
-   reEvaluateTodoList();
+    reEvaluateTodoList();
   }, [render]);
 
   function reEvaluateTodoList() {
-    if(reEvaluate === false) {
-      refetch()
-      setReevaluate(true)
+    if (reEvaluate === false) {
+      refetch();
+      setReevaluate(true);
     } else {
-      refetch()
-      setReevaluate(false)
+      refetch();
+      setReevaluate(false);
     }
   }
 
   return (
     <div className="todo__list-container">
       {data &&
-        data.map((d) => {
+        filteredList.map((d) => {
           return (
             <TodoItem
               key={d._id}

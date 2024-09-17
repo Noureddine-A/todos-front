@@ -1,11 +1,11 @@
 export function getAuthToken() {
-    return localStorage.getItem('token');
+  return localStorage.getItem("token");
 }
 
 export function tokenLoader() {
-    return getAuthToken();
+  return getAuthToken();
 }
 
 export function getUserId() {
-    return localStorage.getItem("userId");
+  return localStorage.getItem("userId");
 }

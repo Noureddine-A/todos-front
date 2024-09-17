@@ -52,7 +52,7 @@ const TodoInput = ({render}) => {
           onKeyDown={onEnterPressed}
           type="text"
           name="todo"
-          placeholder="Create a new todo.."
+          placeholder="Create a new todo..."
         />
       </div>
     </div>

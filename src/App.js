@@ -6,7 +6,7 @@ import SignUp, { action as signUpAction } from "./components/auth/SignUp";
 import Login, { action as loginAction } from "./components/auth/Login";
 import { action as logoutAction } from "./components/auth/Logout";
 import { TodoContent } from "./components/content/TodoContent";
-import { tokenLoader } from "./components/auth/util/auth";
+import { checkAuthLoader, tokenLoader } from "./components/auth/util/auth";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 

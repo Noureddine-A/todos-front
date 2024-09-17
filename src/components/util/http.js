@@ -50,3 +50,18 @@ export async function updateTodo(id) {
 
     return true;
 }
+
+export async function removeCompletedTodos() {
+    const response = await fetch("http://localhost:8080/todo/delete-todos", {
+        method: "DELETE",
+        headers: {
+            Authorization: "Bearer " + getAuthToken()
+        },
+    })
+
+    const apiData = await response.json()
+
+    if(response.status === 200) {
+        console.log(apiData.message);
+    }
+}

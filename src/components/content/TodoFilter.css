@@ -1,0 +1,72 @@
+.todo__filter-container {
+    display: flex;
+    width: 100%;
+    height: 5vh;
+    background-color: var(--very-dark-desaturated-blue);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.todo__items-left-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+    font-family: var(--regular);
+    color: var(--very-dark-grayish-blue);
+    padding-left:1rem;
+}
+
+.todo__filter-buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.filter-button {
+    margin-left: 1rem;
+    font-family: var(--regular);
+    font-size: 16px;
+    border:none;
+    background: none;
+    cursor: pointer;
+    color: var(--very-dark-grayish-blue)
+}
+
+.filter-buttonactive {
+    margin-left: 1rem;
+    font-family: var(--regular);
+    font-size: 16px;
+    border:none;
+    background: none;
+    cursor: pointer;
+    color: #57ddff;
+}
+
+
+.todo__filter-buttons-container button:hover {
+    color: white;
+}
+
+.todo__filter-clear-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo__filter-clear-container button {
+    color: var(--very-dark-grayish-blue);
+    font-family: var(--regular);
+    border:none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.todo__filter-clear-container button:hover{
+    color: white;
+}
+
